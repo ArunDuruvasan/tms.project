@@ -1,0 +1,12 @@
+D:\Trikaiser-TMS\TMS_Admin\TMS.BusinessObjects\bin\Debug\TMS.BusinessObjects.dll
+D:\Trikaiser-TMS\TMS_Admin\TMS.BusinessObjects\bin\Debug\TMS.BusinessObjects.pdb
+D:\Trikaiser-TMS\TMS_Admin\TMS.BusinessObjects\obj\Debug\TMS.BusinessObjects.csprojAssemblyReference.cache
+D:\Trikaiser-TMS\TMS_Admin\TMS.BusinessObjects\obj\Debug\TMS.BusinessObjects.csproj.CoreCompileInputs.cache
+D:\Trikaiser-TMS\TMS_Admin\TMS.BusinessObjects\obj\Debug\TMS.BusinessObjects.dll
+D:\Trikaiser-TMS\TMS_Admin\TMS.BusinessObjects\obj\Debug\TMS.BusinessObjects.pdb
+D:\Trikaiser-TMS\TMS_2020\TMS.BusinessObjects\bin\Debug\TMS.BusinessObjects.dll
+D:\Trikaiser-TMS\TMS_2020\TMS.BusinessObjects\bin\Debug\TMS.BusinessObjects.pdb
+D:\Trikaiser-TMS\TMS_2020\TMS.BusinessObjects\obj\Debug\TMS.BusinessObjects.csprojAssemblyReference.cache
+D:\Trikaiser-TMS\TMS_2020\TMS.BusinessObjects\obj\Debug\TMS.BusinessObjects.csproj.CoreCompileInputs.cache
+D:\Trikaiser-TMS\TMS_2020\TMS.BusinessObjects\obj\Debug\TMS.BusinessObjects.dll
+D:\Trikaiser-TMS\TMS_2020\TMS.BusinessObjects\obj\Debug\TMS.BusinessObjects.pdb

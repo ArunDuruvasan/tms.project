@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="App_SecurityModel.Store" Provider="Npgsql" ProviderManifestToken="10.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="addressmaster">
+    <Key>
+      <PropertyRef Name="addrkey" />
+    </Key>
+    <Property Name="addrkey" Type="uuid" Nullable="false" />
+    <Property Name="addrname" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="address1" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="address2" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="city" Type="varchar" MaxLength="255" />
+    <Property Name="state" Type="varchar" MaxLength="255" />
+    <Property Name="zipcode" Type="varchar" MaxLength="50" />
+    <Property Name="country" Type="bpchar" MaxLength="3" />
+    <Property Name="website" Type="varchar" MaxLength="255" />
+    <Property Name="phone" Type="varchar" MaxLength="20" />
+    <Property Name="email" Type="varchar" MaxLength="255" />
+    <Property Name="fax" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="apps">
+    <Key>
+      <PropertyRef Name="appkey" />
+    </Key>
+    <Property Name="appkey" Type="uuid" Nullable="false" />
+    <Property Name="appname" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="createdate" Type="timestamp" Nullable="false" />
+    <Property Name="version" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="updatedate" Type="timestamp" Nullable="false" />
+  </EntityType>
+  <EntityType Name="company">
+    <Key>
+      <PropertyRef Name="companykey" />
+    </Key>
+    <Property Name="companykey" Type="uuid" Nullable="false" />
+    <Property Name="companyname" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="addrkey" Type="uuid" Nullable="false" />
+    <Property Name="parentcompanykey" Type="uuid" />
+  </EntityType>
+  <EntityType Name="companyapps">
+    <Key>
+      <PropertyRef Name="companykey" />
+      <PropertyRef Name="appkey" />
+    </Key>
+    <Property Name="companykey" Type="uuid" Nullable="false" />
+    <Property Name="appkey" Type="uuid" Nullable="false" />
+    <Property Name="status" Type="int2" Nullable="false" />
+    <Property Name="statusdatetime" Type="timestamp" Nullable="false" />
+    <Property Name="registrationstring" Type="varchar" MaxLength="50" />
+    <Property Name="registrationdate" Type="timestamp" />
+    <Property Name="connectionstring" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="useractivity">
+    <Key>
+      <PropertyRef Name="activitykey" />
+    </Key>
+    <Property Name="activitykey" Type="uuid" Nullable="false" />
+    <Property Name="userkey" Type="uuid" />
+    <Property Name="activitytimestamp" Type="timestamp" />
+    <Property Name="refno" Type="varchar" MaxLength="255" />
+    <Property Name="comments" Type="varchar" MaxLength="8000" />
+  </EntityType>
+  <EntityType Name="usercompany">
+    <Key>
+      <PropertyRef Name="userkey" />
+      <PropertyRef Name="companykey" />
+    </Key>
+    <Property Name="userkey" Type="uuid" Nullable="false" />
+    <Property Name="companykey" Type="uuid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="userinfo">
+    <Key>
+      <PropertyRef Name="userkey" />
+    </Key>
+    <Property Name="userkey" Type="uuid" Nullable="false" />
+    <Property Name="userid" Type="varchar" MaxLength="255" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="passwordexpirydate" Type="timestamp" />
+    <Property Name="firstname" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="lastname" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="addrkey" Type="uuid" Nullable="false" />
+    <Property Name="status" Type="int2" Nullable="false" />
+    <Property Name="statusdate" Type="timestamp" Nullable="false" />
+    <Property Name="approvedby" Type="uuid" Nullable="false" />
+    <Property Name="approvedtimestamp" Type="timestamp" Nullable="false" />
+    <Property Name="createdate" Type="timestamp" Nullable="false" />
+    <Property Name="lastlogindate" Type="timestamp" />
+    <Property Name="loginattempts" Type="int2" />
+    <Property Name="passwordtemp" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="fk_company_address">
+    <End Role="addressmaster" Type="Self.addressmaster" Multiplicity="1" />
+    <End Role="company" Type="Self.company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="addressmaster">
+        <PropertyRef Name="addrkey" />
+      </Principal>
+      <Dependent Role="company">
+        <PropertyRef Name="addrkey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_company_company">
+    <End Role="company" Type="Self.company" Multiplicity="0..1" />
+    <End Role="company1" Type="Self.company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company">
+        <PropertyRef Name="companykey" />
+      </Principal>
+      <Dependent Role="company1">
+        <PropertyRef Name="parentcompanykey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_companyapps_apps">
+    <End Role="apps" Type="Self.apps" Multiplicity="1" />
+    <End Role="companyapps" Type="Self.companyapps" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="apps">
+        <PropertyRef Name="appkey" />
+      </Principal>
+      <Dependent Role="companyapps">
+        <PropertyRef Name="appkey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_companyapps_company">
+    <End Role="company" Type="Self.company" Multiplicity="1" />
+    <End Role="companyapps" Type="Self.companyapps" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company">
+        <PropertyRef Name="companykey" />
+      </Principal>
+      <Dependent Role="companyapps">
+        <PropertyRef Name="companykey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_useractivity_userinfo1">
+    <End Role="userinfo" Type="Self.userinfo" Multiplicity="0..1" />
+    <End Role="useractivity" Type="Self.useractivity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userinfo">
+        <PropertyRef Name="userkey" />
+      </Principal>
+      <Dependent Role="useractivity">
+        <PropertyRef Name="userkey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_usercompany_company">
+    <End Role="company" Type="Self.company" Multiplicity="1" />
+    <End Role="usercompany" Type="Self.usercompany" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company">
+        <PropertyRef Name="companykey" />
+      </Principal>
+      <Dependent Role="usercompany">
+        <PropertyRef Name="companykey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_usercompany_userinfo">
+    <End Role="userinfo" Type="Self.userinfo" Multiplicity="1" />
+    <End Role="usercompany" Type="Self.usercompany" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userinfo">
+        <PropertyRef Name="userkey" />
+      </Principal>
+      <Dependent Role="usercompany">
+        <PropertyRef Name="userkey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_userinfo_address">
+    <End Role="addressmaster" Type="Self.addressmaster" Multiplicity="1" />
+    <End Role="userinfo" Type="Self.userinfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="addressmaster">
+        <PropertyRef Name="addrkey" />
+      </Principal>
+      <Dependent Role="userinfo">
+        <PropertyRef Name="addrkey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="App_SecurityModelStoreContainer">
+    <EntitySet Name="addressmaster" EntityType="Self.addressmaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="apps" EntityType="Self.apps" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="company" EntityType="Self.company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="companyapps" EntityType="Self.companyapps" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="useractivity" EntityType="Self.useractivity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="usercompany" EntityType="Self.usercompany" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="userinfo" EntityType="Self.userinfo" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_company_address" Association="Self.fk_company_address">
+      <End Role="addressmaster" EntitySet="addressmaster" />
+      <End Role="company" EntitySet="company" />
+    </AssociationSet>
+    <AssociationSet Name="fk_company_company" Association="Self.fk_company_company">
+      <End Role="company" EntitySet="company" />
+      <End Role="company1" EntitySet="company" />
+    </AssociationSet>
+    <AssociationSet Name="fk_companyapps_apps" Association="Self.fk_companyapps_apps">
+      <End Role="apps" EntitySet="apps" />
+      <End Role="companyapps" EntitySet="companyapps" />
+    </AssociationSet>
+    <AssociationSet Name="fk_companyapps_company" Association="Self.fk_companyapps_company">
+      <End Role="company" EntitySet="company" />
+      <End Role="companyapps" EntitySet="companyapps" />
+    </AssociationSet>
+    <AssociationSet Name="fk_useractivity_userinfo1" Association="Self.fk_useractivity_userinfo1">
+      <End Role="userinfo" EntitySet="userinfo" />
+      <End Role="useractivity" EntitySet="useractivity" />
+    </AssociationSet>
+    <AssociationSet Name="fk_usercompany_company" Association="Self.fk_usercompany_company">
+      <End Role="company" EntitySet="company" />
+      <End Role="usercompany" EntitySet="usercompany" />
+    </AssociationSet>
+    <AssociationSet Name="fk_usercompany_userinfo" Association="Self.fk_usercompany_userinfo">
+      <End Role="userinfo" EntitySet="userinfo" />
+      <End Role="usercompany" EntitySet="usercompany" />
+    </AssociationSet>
+    <AssociationSet Name="fk_userinfo_address" Association="Self.fk_userinfo_address">
+      <End Role="addressmaster" EntitySet="addressmaster" />
+      <End Role="userinfo" EntitySet="userinfo" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

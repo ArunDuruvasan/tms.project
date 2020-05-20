@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="App_SecurityModelStoreContainer" CdmEntityContainer="App_SecurityEntities">
+    <EntitySetMapping Name="apps">
+      <EntityTypeMapping TypeName="App_SecurityModel.app">
+        <MappingFragment StoreEntitySet="apps">
+          <ScalarProperty Name="appkey" ColumnName="appkey" />
+          <ScalarProperty Name="appname" ColumnName="appname" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="updatedate" ColumnName="updatedate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="companies">
+      <EntityTypeMapping TypeName="App_SecurityModel.company">
+        <MappingFragment StoreEntitySet="company">
+          <ScalarProperty Name="companykey" ColumnName="companykey" />
+          <ScalarProperty Name="companyname" ColumnName="companyname" />
+          <ScalarProperty Name="addrkey" ColumnName="addrkey" />
+          <ScalarProperty Name="parentcompanykey" ColumnName="parentcompanykey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="companyapps">
+      <EntityTypeMapping TypeName="App_SecurityModel.companyapp">
+        <MappingFragment StoreEntitySet="companyapps">
+          <ScalarProperty Name="companykey" ColumnName="companykey" />
+          <ScalarProperty Name="appkey" ColumnName="appkey" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="statusdatetime" ColumnName="statusdatetime" />
+          <ScalarProperty Name="registrationstring" ColumnName="registrationstring" />
+          <ScalarProperty Name="registrationdate" ColumnName="registrationdate" />
+          <ScalarProperty Name="connectionstring" ColumnName="connectionstring" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="useractivities">
+      <EntityTypeMapping TypeName="App_SecurityModel.useractivity">
+        <MappingFragment StoreEntitySet="useractivity">
+          <ScalarProperty Name="activitykey" ColumnName="activitykey" />
+          <ScalarProperty Name="userkey" ColumnName="userkey" />
+          <ScalarProperty Name="activitytimestamp" ColumnName="activitytimestamp" />
+          <ScalarProperty Name="refno" ColumnName="refno" />
+          <ScalarProperty Name="comments" ColumnName="comments" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userinfoes">
+      <EntityTypeMapping TypeName="App_SecurityModel.userinfo">
+        <MappingFragment StoreEntitySet="userinfo">
+          <ScalarProperty Name="userkey" ColumnName="userkey" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="passwordexpirydate" ColumnName="passwordexpirydate" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="addrkey" ColumnName="addrkey" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="statusdate" ColumnName="statusdate" />
+          <ScalarProperty Name="approvedby" ColumnName="approvedby" />
+          <ScalarProperty Name="approvedtimestamp" ColumnName="approvedtimestamp" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="lastlogindate" ColumnName="lastlogindate" />
+          <ScalarProperty Name="loginattempts" ColumnName="loginattempts" />
+          <ScalarProperty Name="passwordtemp" ColumnName="passwordtemp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="usercompany" TypeName="App_SecurityModel.usercompany" StoreEntitySet="usercompany">
+      <EndProperty Name="company">
+        <ScalarProperty Name="companykey" ColumnName="companykey" />
+      </EndProperty>
+      <EndProperty Name="userinfo">
+        <ScalarProperty Name="userkey" ColumnName="userkey" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="addressmasters">
+      <EntityTypeMapping TypeName="App_SecurityModel.addressmaster">
+        <MappingFragment StoreEntitySet="addressmaster">
+          <ScalarProperty Name="fax" ColumnName="fax" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="website" ColumnName="website" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="zipcode" ColumnName="zipcode" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="address2" ColumnName="address2" />
+          <ScalarProperty Name="address1" ColumnName="address1" />
+          <ScalarProperty Name="addrname" ColumnName="addrname" />
+          <ScalarProperty Name="addrkey" ColumnName="addrkey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

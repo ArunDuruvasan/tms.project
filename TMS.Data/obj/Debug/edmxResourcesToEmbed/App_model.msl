@@ -1,0 +1,483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="App_modelModelStoreContainer" CdmEntityContainer="App_modelEntities">
+    <EntitySetMapping Name="addresses">
+      <EntityTypeMapping TypeName="App_modelModel.address">
+        <MappingFragment StoreEntitySet="address">
+          <ScalarProperty Name="addrkey" ColumnName="addrkey" />
+          <ScalarProperty Name="addrname" ColumnName="addrname" />
+          <ScalarProperty Name="address1" ColumnName="address1" />
+          <ScalarProperty Name="address2" ColumnName="address2" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="zipcode" ColumnName="zipcode" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="website" ColumnName="website" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="fax" ColumnName="fax" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="approles">
+      <EntityTypeMapping TypeName="App_modelModel.approle">
+        <MappingFragment StoreEntitySet="approles">
+          <ScalarProperty Name="rolekey" ColumnName="rolekey" />
+          <ScalarProperty Name="descrption" ColumnName="descrption" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="brokers">
+      <EntityTypeMapping TypeName="App_modelModel.broker">
+        <MappingFragment StoreEntitySet="broker">
+          <ScalarProperty Name="brokerkey" ColumnName="brokerkey" />
+          <ScalarProperty Name="brokerid" ColumnName="brokerid" />
+          <ScalarProperty Name="brokername" ColumnName="brokername" />
+          <ScalarProperty Name="addrkey" ColumnName="addrkey" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="statusdate" ColumnName="statusdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="carriers">
+      <EntityTypeMapping TypeName="App_modelModel.carrier">
+        <MappingFragment StoreEntitySet="carrier">
+          <ScalarProperty Name="isstreamline" ColumnName="isstreamline" />
+          <ScalarProperty Name="carrierkey" ColumnName="carrierkey" />
+          <ScalarProperty Name="carrierid" ColumnName="carrierid" />
+          <ScalarProperty Name="carriername" ColumnName="carriername" />
+          <ScalarProperty Name="addrkey" ColumnName="addrkey" />
+          <ScalarProperty Name="scaccode" ColumnName="scaccode" />
+          <ScalarProperty Name="licenseplate" ColumnName="licenseplate" />
+          <ScalarProperty Name="licenseplateexpirydate" ColumnName="licenseplateexpirydate" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="statusdate" ColumnName="statusdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="comments">
+      <EntityTypeMapping TypeName="App_modelModel.comment">
+        <MappingFragment StoreEntitySet="comment">
+          <ScalarProperty Name="commentkey" ColumnName="commentkey" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="createuserkey" ColumnName="createuserkey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contacts">
+      <EntityTypeMapping TypeName="App_modelModel.contact">
+        <MappingFragment StoreEntitySet="contacts">
+          <ScalarProperty Name="contactkey" ColumnName="contactkey" />
+          <ScalarProperty Name="contactid" ColumnName="contactid" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="contacttype" ColumnName="contacttype" />
+          <ScalarProperty Name="addrkey" ColumnName="addrkey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customers">
+      <EntityTypeMapping TypeName="App_modelModel.customer">
+        <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="creditcheck" ColumnName="creditcheck" />
+          <ScalarProperty Name="custkey" ColumnName="custkey" />
+          <ScalarProperty Name="custid" ColumnName="custid" />
+          <ScalarProperty Name="custname" ColumnName="custname" />
+          <ScalarProperty Name="addrkey" ColumnName="addrkey" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="customergroup" ColumnName="customergroup" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="statusdate" ColumnName="statusdate" />
+          <ScalarProperty Name="creditlimit" ColumnName="creditlimit" />
+          <ScalarProperty Name="creditstatus" ColumnName="creditstatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customeraddresses">
+      <EntityTypeMapping TypeName="App_modelModel.customeraddress">
+        <MappingFragment StoreEntitySet="customeraddress">
+          <ScalarProperty Name="custkey" ColumnName="custkey" />
+          <ScalarProperty Name="addrkey" ColumnName="addrkey" />
+          <ScalarProperty Name="addrtype" ColumnName="addrtype" />
+          <ScalarProperty Name="addrid" ColumnName="addrid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="documents">
+      <EntityTypeMapping TypeName="App_modelModel.document">
+        <MappingFragment StoreEntitySet="document">
+          <ScalarProperty Name="documentkey" ColumnName="documentkey" />
+          <ScalarProperty Name="documenttype" ColumnName="documenttype" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="createuserkey" ColumnName="createuserkey" />
+          <ScalarProperty Name="originalfilename" ColumnName="originalfilename" />
+          <ScalarProperty Name="originalfiletype" ColumnName="originalfiletype" />
+          <ScalarProperty Name="filesizeinmb" ColumnName="filesizeinmb" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="documenttypes">
+      <EntityTypeMapping TypeName="App_modelModel.documenttype">
+        <MappingFragment StoreEntitySet="documenttype">
+          <ScalarProperty Name="documenttype1" ColumnName="documenttype" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="storagepath" ColumnName="storagepath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="drivers">
+      <EntityTypeMapping TypeName="App_modelModel.driver">
+        <MappingFragment StoreEntitySet="driver">
+          <ScalarProperty Name="driverkey" ColumnName="driverkey" />
+          <ScalarProperty Name="driverid" ColumnName="driverid" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="addrkey" ColumnName="addrkey" />
+          <ScalarProperty Name="carrierkey" ColumnName="carrierkey" />
+          <ScalarProperty Name="drivinglicenseno" ColumnName="drivinglicenseno" />
+          <ScalarProperty Name="drivinglicenseexpirydate" ColumnName="drivinglicenseexpirydate" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="statusdate" ColumnName="statusdate" />
+          <ScalarProperty Name="vendkey" ColumnName="vendkey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="invoicedetails">
+      <EntityTypeMapping TypeName="App_modelModel.invoicedetail">
+        <MappingFragment StoreEntitySet="invoicedetail">
+          <ScalarProperty Name="invoicelinekey" ColumnName="invoicelinekey" />
+          <ScalarProperty Name="invoicekey" ColumnName="invoicekey" />
+          <ScalarProperty Name="itemkey" ColumnName="itemkey" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="unitprice" ColumnName="unitprice" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="extamt" ColumnName="extamt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="invoiceheaders">
+      <EntityTypeMapping TypeName="App_modelModel.invoiceheader">
+        <MappingFragment StoreEntitySet="invoiceheader">
+          <ScalarProperty Name="invoicekey" ColumnName="invoicekey" />
+          <ScalarProperty Name="invoiceno" ColumnName="invoiceno" />
+          <ScalarProperty Name="invoicedate" ColumnName="invoicedate" />
+          <ScalarProperty Name="custkey" ColumnName="custkey" />
+          <ScalarProperty Name="billtoaddrkey" ColumnName="billtoaddrkey" />
+          <ScalarProperty Name="billtocopyaddrkey" ColumnName="billtocopyaddrkey" />
+          <ScalarProperty Name="invoiceamount" ColumnName="invoiceamount" />
+          <ScalarProperty Name="duedate" ColumnName="duedate" />
+          <ScalarProperty Name="invoicetype" ColumnName="invoicetype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="items">
+      <EntityTypeMapping TypeName="App_modelModel.item">
+        <MappingFragment StoreEntitySet="item">
+          <ScalarProperty Name="itemkey" ColumnName="itemkey" />
+          <ScalarProperty Name="itemid" ColumnName="itemid" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="itemtype" ColumnName="itemtype" />
+          <ScalarProperty Name="unitprice" ColumnName="unitprice" />
+          <ScalarProperty Name="unitcost" ColumnName="unitcost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="shippingports">
+      <EntityTypeMapping TypeName="App_modelModel.shippingport">
+        <MappingFragment StoreEntitySet="shippingport">
+          <ScalarProperty Name="shippingportkey" ColumnName="shippingportkey" />
+          <ScalarProperty Name="shippingportid" ColumnName="shippingportid" />
+          <ScalarProperty Name="addrkey" ColumnName="addrkey" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="shippingportterminals">
+      <EntityTypeMapping TypeName="App_modelModel.shippingportterminal">
+        <MappingFragment StoreEntitySet="shippingportterminals">
+          <ScalarProperty Name="terminalkey" ColumnName="terminalkey" />
+          <ScalarProperty Name="portkey" ColumnName="portkey" />
+          <ScalarProperty Name="addrkey" ColumnName="addrkey" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tms_containersize">
+      <EntityTypeMapping TypeName="App_modelModel.tms_containersize">
+        <MappingFragment StoreEntitySet="tms_containersize">
+          <ScalarProperty Name="containersize" ColumnName="containersize" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tms_holdreason">
+      <EntityTypeMapping TypeName="App_modelModel.tms_holdreason">
+        <MappingFragment StoreEntitySet="tms_holdreason">
+          <ScalarProperty Name="holdreason" ColumnName="holdreason" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tms_orderdetail">
+      <EntityTypeMapping TypeName="App_modelModel.tms_orderdetail">
+        <MappingFragment StoreEntitySet="tms_orderdetail">
+          <ScalarProperty Name="orderdetailkey" ColumnName="orderdetailkey" />
+          <ScalarProperty Name="orderkey" ColumnName="orderkey" />
+          <ScalarProperty Name="containerno" ColumnName="containerno" />
+          <ScalarProperty Name="containersize" ColumnName="containersize" />
+          <ScalarProperty Name="chassis" ColumnName="chassis" />
+          <ScalarProperty Name="sealno" ColumnName="sealno" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="apptdatefrom" ColumnName="apptdatefrom" />
+          <ScalarProperty Name="apptdateto" ColumnName="apptdateto" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="statusdate" ColumnName="statusdate" />
+          <ScalarProperty Name="holdreason" ColumnName="holdreason" />
+          <ScalarProperty Name="holddate" ColumnName="holddate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tms_orderdetailcomments">
+      <EntityTypeMapping TypeName="App_modelModel.tms_orderdetailcomments">
+        <MappingFragment StoreEntitySet="tms_orderdetailcomments">
+          <ScalarProperty Name="orderdetailkey" ColumnName="orderdetailkey" />
+          <ScalarProperty Name="commentkey" ColumnName="commentkey" />
+          <ScalarProperty Name="commenttype" ColumnName="commenttype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tms_orderheader">
+      <EntityTypeMapping TypeName="App_modelModel.tms_orderheader">
+        <MappingFragment StoreEntitySet="tms_orderheader">
+          <ScalarProperty Name="ishazardous" ColumnName="ishazardous" />
+          <ScalarProperty Name="orderkey" ColumnName="orderkey" />
+          <ScalarProperty Name="orderno" ColumnName="orderno" />
+          <ScalarProperty Name="orderdate" ColumnName="orderdate" />
+          <ScalarProperty Name="custkey" ColumnName="custkey" />
+          <ScalarProperty Name="billtoaddrkey" ColumnName="billtoaddrkey" />
+          <ScalarProperty Name="billtocopyaddrkey" ColumnName="billtocopyaddrkey" />
+          <ScalarProperty Name="sourceaddrkey" ColumnName="sourceaddrkey" />
+          <ScalarProperty Name="sourcecopyaddrkey" ColumnName="sourcecopyaddrkey" />
+          <ScalarProperty Name="destinationaddrkey" ColumnName="destinationaddrkey" />
+          <ScalarProperty Name="destinationcopyaddrkey" ColumnName="destinationcopyaddrkey" />
+          <ScalarProperty Name="returnaddrkey" ColumnName="returnaddrkey" />
+          <ScalarProperty Name="returncopyaddrkey" ColumnName="returncopyaddrkey" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="ordertype" ColumnName="ordertype" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="statusdate" ColumnName="statusdate" />
+          <ScalarProperty Name="holdreason" ColumnName="holdreason" />
+          <ScalarProperty Name="holddate" ColumnName="holddate" />
+          <ScalarProperty Name="brokerkey" ColumnName="brokerkey" />
+          <ScalarProperty Name="brokerrefno" ColumnName="brokerrefno" />
+          <ScalarProperty Name="portoforiginkey" ColumnName="portoforiginkey" />
+          <ScalarProperty Name="carrierkey" ColumnName="carrierkey" />
+          <ScalarProperty Name="vesselname" ColumnName="vesselname" />
+          <ScalarProperty Name="billoflading" ColumnName="billoflading" />
+          <ScalarProperty Name="bookingno" ColumnName="bookingno" />
+          <ScalarProperty Name="cutoffdate" ColumnName="cutoffdate" />
+          <ScalarProperty Name="priority" ColumnName="priority" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="createuserkey" ColumnName="createuserkey" />
+          <ScalarProperty Name="lastupdatedate" ColumnName="lastupdatedate" />
+          <ScalarProperty Name="lastupdateuserkey" ColumnName="lastupdateuserkey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tms_orderheadercomments">
+      <EntityTypeMapping TypeName="App_modelModel.tms_orderheadercomments">
+        <MappingFragment StoreEntitySet="tms_orderheadercomments">
+          <ScalarProperty Name="orderkey" ColumnName="orderkey" />
+          <ScalarProperty Name="commentkey" ColumnName="commentkey" />
+          <ScalarProperty Name="commenttype" ColumnName="commenttype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tms_ordersource">
+      <EntityTypeMapping TypeName="App_modelModel.tms_ordersource">
+        <MappingFragment StoreEntitySet="tms_ordersource">
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tms_orderstatus">
+      <EntityTypeMapping TypeName="App_modelModel.tms_orderstatus">
+        <MappingFragment StoreEntitySet="tms_orderstatus">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="orderby" ColumnName="orderby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tms_ordertype">
+      <EntityTypeMapping TypeName="App_modelModel.tms_ordertype">
+        <MappingFragment StoreEntitySet="tms_ordertype">
+          <ScalarProperty Name="ordertype" ColumnName="ordertype" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tms_priority">
+      <EntityTypeMapping TypeName="App_modelModel.tms_priority">
+        <MappingFragment StoreEntitySet="tms_priority">
+          <ScalarProperty Name="priority" ColumnName="priority" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="colorcode" ColumnName="colorcode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tms_routes">
+      <EntityTypeMapping TypeName="App_modelModel.tms_routes">
+        <MappingFragment StoreEntitySet="tms_routes">
+          <ScalarProperty Name="routekey" ColumnName="routekey" />
+          <ScalarProperty Name="orderdetailkey" ColumnName="orderdetailkey" />
+          <ScalarProperty Name="orderkey" ColumnName="orderkey" />
+          <ScalarProperty Name="legno" ColumnName="legno" />
+          <ScalarProperty Name="legtype" ColumnName="legtype" />
+          <ScalarProperty Name="sourceaddrkey" ColumnName="sourceaddrkey" />
+          <ScalarProperty Name="destinationaddrkey" ColumnName="destinationaddrkey" />
+          <ScalarProperty Name="estimateddistanceinmiles" ColumnName="estimateddistanceinmiles" />
+          <ScalarProperty Name="estimatedtraveltime" ColumnName="estimatedtraveltime" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="driverkey" ColumnName="driverkey" />
+          <ScalarProperty Name="scheduledarrival" ColumnName="scheduledarrival" />
+          <ScalarProperty Name="scheduleddeparture" ColumnName="scheduleddeparture" />
+          <ScalarProperty Name="odometeratsource" ColumnName="odometeratsource" />
+          <ScalarProperty Name="actualarrival" ColumnName="actualarrival" />
+          <ScalarProperty Name="actualdeparture" ColumnName="actualdeparture" />
+          <ScalarProperty Name="odometeratdestination" ColumnName="odometeratdestination" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vendors">
+      <EntityTypeMapping TypeName="App_modelModel.vendor">
+        <MappingFragment StoreEntitySet="vendor">
+          <ScalarProperty Name="vendkey" ColumnName="vendkey" />
+          <ScalarProperty Name="vendid" ColumnName="vendid" />
+          <ScalarProperty Name="vendname" ColumnName="vendname" />
+          <ScalarProperty Name="addrkey" ColumnName="addrkey" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="statusdate" ColumnName="statusdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="voucherdetails">
+      <EntityTypeMapping TypeName="App_modelModel.voucherdetail">
+        <MappingFragment StoreEntitySet="voucherdetail">
+          <ScalarProperty Name="voucherlinekey" ColumnName="voucherlinekey" />
+          <ScalarProperty Name="voucherkey" ColumnName="voucherkey" />
+          <ScalarProperty Name="itemkey" ColumnName="itemkey" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="unitcost" ColumnName="unitcost" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="extcost" ColumnName="extcost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="voucherheaders">
+      <EntityTypeMapping TypeName="App_modelModel.voucherheader">
+        <MappingFragment StoreEntitySet="voucherheader">
+          <ScalarProperty Name="ispaymentapproved" ColumnName="ispaymentapproved" />
+          <ScalarProperty Name="voucherkey" ColumnName="voucherkey" />
+          <ScalarProperty Name="voucherno" ColumnName="voucherno" />
+          <ScalarProperty Name="voucherdate" ColumnName="voucherdate" />
+          <ScalarProperty Name="vendkey" ColumnName="vendkey" />
+          <ScalarProperty Name="billtoaddrkey" ColumnName="billtoaddrkey" />
+          <ScalarProperty Name="billtocopyaddrkey" ColumnName="billtocopyaddrkey" />
+          <ScalarProperty Name="voucheramount" ColumnName="voucheramount" />
+          <ScalarProperty Name="duedate" ColumnName="duedate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="warehouses">
+      <EntityTypeMapping TypeName="App_modelModel.warehouse">
+        <MappingFragment StoreEntitySet="warehouse">
+          <ScalarProperty Name="warehousekey" ColumnName="warehousekey" />
+          <ScalarProperty Name="warehouseid" ColumnName="warehouseid" />
+          <ScalarProperty Name="addrkey" ColumnName="addrkey" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="brokercontacts" TypeName="App_modelModel.brokercontacts" StoreEntitySet="brokercontacts">
+      <EndProperty Name="broker">
+        <ScalarProperty Name="brokerkey" ColumnName="brokerkey" />
+      </EndProperty>
+      <EndProperty Name="contacts">
+        <ScalarProperty Name="contactkey" ColumnName="contactkey" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="commentdocuments" TypeName="App_modelModel.commentdocuments" StoreEntitySet="commentdocuments">
+      <EndProperty Name="comment">
+        <ScalarProperty Name="commentkey" ColumnName="commentkey" />
+      </EndProperty>
+      <EndProperty Name="document">
+        <ScalarProperty Name="documentkey" ColumnName="documentkey" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="customercontacts" TypeName="App_modelModel.customercontacts" StoreEntitySet="customercontacts">
+      <EndProperty Name="contacts">
+        <ScalarProperty Name="contactkey" ColumnName="contactkey" />
+      </EndProperty>
+      <EndProperty Name="customer">
+        <ScalarProperty Name="custkey" ColumnName="custkey" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tms_orderdetaildocuments" TypeName="App_modelModel.tms_orderdetaildocuments" StoreEntitySet="tms_orderdetaildocuments">
+      <EndProperty Name="document">
+        <ScalarProperty Name="documentkey" ColumnName="documentkey" />
+      </EndProperty>
+      <EndProperty Name="tms_orderdetail">
+        <ScalarProperty Name="orderdetailkey" ColumnName="orderdetailkey" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tms_orderheaderdocuments" TypeName="App_modelModel.tms_orderheaderdocuments" StoreEntitySet="tms_orderheaderdocuments">
+      <EndProperty Name="document">
+        <ScalarProperty Name="documentkey" ColumnName="documentkey" />
+      </EndProperty>
+      <EndProperty Name="tms_orderheader">
+        <ScalarProperty Name="orderkey" ColumnName="orderkey" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tms_orderinvoices" TypeName="App_modelModel.tms_orderinvoices" StoreEntitySet="tms_orderinvoices">
+      <EndProperty Name="invoiceheader">
+        <ScalarProperty Name="invoicekey" ColumnName="invoicekey" />
+      </EndProperty>
+      <EndProperty Name="tms_orderdetail">
+        <ScalarProperty Name="orderdetailkey" ColumnName="orderdetailkey" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tms_routevouchers" TypeName="App_modelModel.tms_routevouchers" StoreEntitySet="tms_routevouchers">
+      <EndProperty Name="tms_routes">
+        <ScalarProperty Name="routekey" ColumnName="routekey" />
+      </EndProperty>
+      <EndProperty Name="voucherheader">
+        <ScalarProperty Name="voucherkey" ColumnName="voucherkey" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="App_modelModel.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="usertyperefkey" ColumnName="usertyperefkey" />
+          <ScalarProperty Name="usertype" ColumnName="usertype" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="userkey" ColumnName="userkey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="userroles1" TypeName="App_modelModel.userroles1" StoreEntitySet="userroles">
+      <EndProperty Name="user">
+        <ScalarProperty Name="userkey" ColumnName="userkey" />
+      </EndProperty>
+      <EndProperty Name="approle">
+        <ScalarProperty Name="rolekey" ColumnName="rolekey" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
